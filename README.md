@@ -1,2 +1,2 @@
-# Sub-Repo
+# SubRepo
 This is my Sub Repository
