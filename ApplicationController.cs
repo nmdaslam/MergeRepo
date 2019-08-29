@@ -76,6 +76,21 @@ namespace BackOfficeServer.Controllers
         /// <param name="id"></param>
         /// <returns>application details</returns>
         ///         
+		
+		[HttpPost]
+        [Route("Applications/MockDebicheckRepayment/{ApplicationId}")]
+        public void MockDebicheckRepayment(int ApplicationId) {
+            DebiCheckIntegration ob = new DebiCheckIntegration();
+            DebiCheckMandate debiCheckMandate=null ;
+            using (var uow = new UnitOfWork())
+            {
+                var mandate = new XPQuery<DebiCheckMandate>(uow).FirstOrDefault(a => a.ApplicationId == ApplicationId);
+                debiCheckMandate = mandate;
+                ob.MockDebicheckRepayment(debiCheckMandate,DateTime.Now,DateTime.Now,true,"");
+                
+            }
+        }
+		
         [HttpGet]
         public Response<VMApplicationDetails> GetApplicationById(int id)
         {
@@ -10122,38 +10137,7 @@ namespace BackOfficeServer.Controllers
             }
         }
 
-        public void ApproveDebicheckDebitOrder(int ApplicationId)
-        {
-            log.Info("Updating Debit Order Status, Application : " + ApplicationId);
-            using (var uow = new UnitOfWork())
-            {
-                var mandate = new XPQuery<DebiCheckMandate>(uow).FirstOrDefault(a => a.ApplicationId == ApplicationId);
-                mandate.Status = "APPROVED";
-                mandate.Save();
-                uow.CommitChanges();
-
-                using (var result = new BackOfficeWebServiceClient("BackOfficeWebServer.NET"))
-                {
-                    var filterConditions = "1=1";
-                    var StatusResult = result.UpdateApplicationDisbursementStatus(filterConditions, Convert.ToInt32(mandate.ContractNumber), (int)BackOfficeEnum.NewStatus.STATUS_DEBIT_ORDER_APPROVED);
-                }
-            }
-
-            DBManager.UpdateApplicationCMSState(ApplicationId, BackOfficeEnum.Action.APPLICATION_APPROVE_DEBIT_ORDER.ToString());
-        }
-        [HttpPost]
-        [Route("Applications/MockDebicheckRepayment/{ApplicationId}")]
-        public void MockDebicheckRepayment(int ApplicationId) {
-            DebiCheckIntegration ob = new DebiCheckIntegration();
-            DebiCheckMandate debiCheckMandate=null ;
-            using (var uow = new UnitOfWork())
-            {
-                var mandate = new XPQuery<DebiCheckMandate>(uow).FirstOrDefault(a => a.ApplicationId == ApplicationId);
-                debiCheckMandate = mandate;
-                ob.MockDebicheckRepayment(debiCheckMandate,DateTime.Now,DateTime.Now,true,"");
-                
-            }
-        }
+        
 
     }
 }
