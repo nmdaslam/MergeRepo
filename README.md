@@ -1,3 +1,2 @@
-# SubRepo
-This is my Sub Repository
-Main Repository
+# MainRepo
+This is my Main Repository
