@@ -1,4 +1,3 @@
-﻿using Atlas.Domain.DTO;
 using Atlas.Domain.Model;
 using DevExpress.Xpo;
 using System;
