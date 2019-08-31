@@ -1,1 +1,2 @@
-Main Repository
+# SubRepo
+This is my Sub Repository
