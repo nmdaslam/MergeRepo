@@ -1,22 +1,4 @@
-﻿using Atlas.Domain.DTO;
-using Atlas.Domain.Model;
-using DevExpress.Xpo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-using log4net;
-using Newtonsoft.Json;
-using Atlas.Online.Data.Models.DTO;
-using BackOfficeServer.Common;
-using Atlas.Common.Common;
-using BackOfficeServer.BackOfficeWebServer;
-using AutoMapper;
-using Atlas.Online.Data.Models.Dto;
-using Atlas.Common.Utils;
-using System.Web;
-using Atlas.Domain.DTO.BOS;
-using Atlas.Domain.Model.BOS;
+Deleted some content by Aslam
 using System.Net.Http;
 using BackOfficeServer.ViewModels;
 using Newtonsoft.Json.Linq;
