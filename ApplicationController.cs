@@ -10141,7 +10141,21 @@ namespace BackOfficeServer.Controllers
 
             DBManager.UpdateApplicationCMSState(ApplicationId, BackOfficeEnum.Action.APPLICATION_APPROVE_DEBIT_ORDER.ToString());
         }
-        
+        [HttpPost]
+        [Route("Applications/MockDebicheckRepayment/{ApplicationId}")]
+        public void MockDebicheckRepayment(int ApplicationId) {
+            DebiCheckIntegration ob = new DebiCheckIntegration();
+            DebiCheckMandate debiCheckMandate=null ;
+            using (var uow = new UnitOfWork())
+            {
+                var mandate = new XPQuery<DebiCheckMandate>(uow).FirstOrDefault(a => a.ApplicationId == ApplicationId);
+                debiCheckMandate = mandate;
+                ob.MockDebicheckRepayment(debiCheckMandate,DateTime.Now,DateTime.Now,true,"");
+                
+            }
+        }
 
+        
+modified by aslam
     }
 }
