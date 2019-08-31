@@ -1,68 +1,3 @@
-﻿using Atlas.Domain.DTO;
-using Atlas.Domain.Model;
-using DevExpress.Xpo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-using log4net;
-using Newtonsoft.Json;
-using Atlas.Online.Data.Models.DTO;
-using BackOfficeServer.Common;
-using Atlas.Common.Common;
-using BackOfficeServer.BackOfficeWebServer;
-using AutoMapper;
-using Atlas.Online.Data.Models.Dto;
-using Atlas.Common.Utils;
-using System.Web;
-using Atlas.Domain.DTO.BOS;
-using Atlas.Domain.Model.BOS;
-using System.Net.Http;
-using BackOfficeServer.ViewModels;
-using Newtonsoft.Json.Linq;
-using static Atlas.Common.Utils.BackOfficeEnum;
-using System.IO;
-using ICSharpCode.SharpZipLib.Zip;
-using System.Xml.Serialization;
-using WebIntegration;
-using BackOfficeServer.BackOfficeAccountServer;
-using System.Text;
-using System.Net;
-using System.Net.Http.Headers;
-using BackOfficeServer.Integrations;
-using System.Linq.Dynamic;
-using Atlas.Domain.Model.Account;
-using DevExpress.Snap;
-using DevExpress.Snap.Core.API;
-using FrameworkLibrary.ResponseBase;
-using FrameworkLibrary.ExceptionBase;
-using FrameworkLibrary.Common;
-using BackOfficeServer.OrchestrationService;
-using Atlas.Domain.Model.Branch;
-using System.Configuration;
-using Atlas.Domain.Model.CreditLife;
-using PdfSharp.Drawing;
-using PdfSharp.Pdf;
-using PdfSharp.Pdf.IO;
-using Atlas.Domain.Model.BOS_NuCardClientMap;
-using BackOfficeServer.Models;
-using Atlas.ThirdParty.XDSConnect;
-using Atlas.Domain.Model.ThirdParty;
-using System.Text.RegularExpressions;
-using Atlas.Enumerators;
-using Atlas.ThirdParty.DebiCheck.Services;
-using Atlas.ThirdParty.DebiCheck.Models;
-using Atlas.Domain.DTO.DebiCheck;
-using System.Threading.Tasks;
-using System.Globalization;
-using Atlas.Domain.Model.Bank;
-using Atlas.Domain.Model.ABSA;
-using static BackOfficeServer.Common.ApplicationCaseUtil;
-using Atlas.Common.Interface;
-using System.Web.SessionState;
-using System.Xml;
-// using Atlas.Online.Data.Models.Definitions;
-
 namespace BackOfficeServer.Controllers
 {
     public class ApplicationController : BaseController
@@ -10156,6 +10091,6 @@ namespace BackOfficeServer.Controllers
         }
 
         
-modified by aslam
+modified by aslam AGAIN
     }
 }
