@@ -1,3 +1,3 @@
 mainrepo-line-1
+mainrepo-line-2
 subrepo-line-1
-subrepo-line-2
